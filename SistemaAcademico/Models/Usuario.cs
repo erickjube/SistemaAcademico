@@ -14,4 +14,7 @@ public class Usuario
     public PerfilUsuario Perfil { get; set; }
     
     public bool Ativo { get; set; } = true;
+
+    public ICollection<Turma> TurmasProfessor { get; set; } = new List<Turma>();
+    public ICollection<Matricula> MatriculasAluno { get; set; } = new List<Matricula>();
 }
