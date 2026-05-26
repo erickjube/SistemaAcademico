@@ -1,6 +1,7 @@
-﻿namespace SistemaAcademico.Patterns.Strategy
+﻿namespace SistemaAcademico.Patterns.Strategy;
+
+public class MediaAritmetica : ICalculadoraMedia
 {
-    public class MediaAritmetica
-    {
-    }
+    public decimal Calcular(decimal p1, decimal p2, decimal trabalho)
+        => (p1 + p2 + trabalho) / 3m;
 }

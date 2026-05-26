@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|c:\\users\\erick jube\\onedrive\\documents\\00faculdade\\semestre 5\\arquitetura_desenho_software\\trabalho\\sistemaacademico\\sistemaacademico\\dtos\\notaatualizardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|solutionrelative:sistemaacademico\\dtos\\notaatualizardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|c:\\users\\erick jube\\onedrive\\documents\\00faculdade\\semestre 5\\arquitetura_desenho_software\\trabalho\\sistemaacademico\\sistemaacademico\\dtos\\matriculacriardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|solutionrelative:sistemaacademico\\dtos\\matriculacriardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NotaAtualizarDto.cs",
+              "DocumentMoniker": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\DTOs\\NotaAtualizarDto.cs",
+              "RelativeDocumentMoniker": "SistemaAcademico\\DTOs\\NotaAtualizarDto.cs",
+              "ToolTip": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\DTOs\\NotaAtualizarDto.cs",
+              "RelativeToolTip": "SistemaAcademico\\DTOs\\NotaAtualizarDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T19:19:27.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MatriculaCriarDto.cs",
+              "DocumentMoniker": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\DTOs\\MatriculaCriarDto.cs",
+              "RelativeDocumentMoniker": "SistemaAcademico\\DTOs\\MatriculaCriarDto.cs",
+              "ToolTip": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\DTOs\\MatriculaCriarDto.cs",
+              "RelativeToolTip": "SistemaAcademico\\DTOs\\MatriculaCriarDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T19:19:08.749Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
