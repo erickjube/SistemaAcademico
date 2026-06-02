@@ -15,6 +15,33 @@ public class MatriculaRepository : IMatriculaRepository
         _context = context;
     }
 
+    public async Task<IEnumerable<Matricula>> ObterMatriculasAsync()
+    {
+        return await _context.Matriculas
+            .Include(m => m.Aluno)
+            .Include(m => m.Turma)
+                .ThenInclude(t => t.Disciplina)
+            .ToListAsync();
+    }
+
+    public async Task<IEnumerable<Matricula>> ObterMatriculasPorAlunoAsync(int alunoId)
+    {
+        return await _context.Matriculas
+            .Include(m => m.Turma)
+                .ThenInclude(t => t.Disciplina)
+            .Where(m => m.AlunoId == alunoId)
+            .ToListAsync();
+    }
+
+    public async Task<Matricula> ObterMatriculaAsync(int matriculaId)
+    {
+        return await _context.Matriculas
+            .Include(m => m.Aluno)
+            .Include(m => m.Turma)
+                .ThenInclude(t => t.Disciplina)
+            .FirstOrDefaultAsync(m => m.Id == matriculaId);
+    }
+
     public Task AdicionarFilaEsperaAsync(FilaEspera fila)
     {
         return _context.FilaEsperas.AddAsync(fila).AsTask();
@@ -35,6 +62,22 @@ public class MatriculaRepository : IMatriculaRepository
         return _context.Matriculas.AnyAsync(m => m.AlunoId == alunoId && 
                                             m.Turma!.DisciplinaId == disciplinaId && 
                                             m.Status == ENUMs.MatriculaStatus.Ativa);
+    }
+
+    public Task<int> QuantidadeDisciplinasMatriculadasAsync(int alunoId, int periodoLetivoId)
+    {
+        return _context.Matriculas.CountAsync(m => m.AlunoId == alunoId && 
+                                            m.Turma!.PeriodoLetivoId == periodoLetivoId && 
+                                            m.Status == ENUMs.MatriculaStatus.Ativa);
+    }
+    
+    public Task<bool> PossuiPreRequisitoAsync(int alunoId, int disciplinaId)
+    {
+        return _context.Matriculas.AnyAsync(m =>
+                                            m.AlunoId == alunoId &&
+                                            m.Nota != null &&
+                                            m.Nota!.Situacao == ENUMs.SituacaoAluno.Aprovado &&
+                                            m.Turma!.DisciplinaId == disciplinaId);
     }
 
     public async Task<Turma?> ObterTurmaCompletaAsync(int turmaId)

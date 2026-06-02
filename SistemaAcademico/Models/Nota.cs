@@ -5,22 +5,22 @@ namespace SistemaAcademico.Models;
 
 public class Nota
 {
-    public int Id { get; set; }
+    public int Id { get; private set; }
 
-    public int MatriculaId { get; set; }
-    public Matricula? Matricula { get; set; }
+    public int MatriculaId { get; private set; }
+    public Matricula? Matricula { get; private set; }
 
-    public decimal P1 { get; set; }
-    public decimal P2 { get; set; }
-    public decimal Trabalho { get; set; }
+    public decimal P1 { get; private set; }
+    public decimal P2 { get; private set; }
+    public decimal Trabalho { get; private set; }
 
-    public decimal Media { get; set; }
-    public SituacaoAluno Situacao { get; set; }
+    public decimal Media { get; private set; }
+    public SituacaoAluno Situacao { get; private set; }
 
-    public decimal Frequencia { get; set; }
+    public decimal Frequencia { get; private set; }
 
     [Timestamp]
-    public byte[]? RowVersion { get; set; }
+    public byte[]? RowVersion { get; private set; }
 
     public Nota() { }
 

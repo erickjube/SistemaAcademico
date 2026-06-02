@@ -4,24 +4,22 @@ namespace SistemaAcademico.Models;
 
 public class Turma
 {
-    public int Id { get; set; }
+    public int Id { get; private set; }
 
-    public int DisciplinaId { get; set; }
-    public Disciplina? Disciplina { get; set; }
+    public int DisciplinaId { get; private set; }
+    public Disciplina? Disciplina { get; private set; }
 
-    public int ProfessorId { get; set; }
-    public Usuario? Professor { get; set; }
+    public int ProfessorId { get; private set; }
+    public Usuario? Professor { get; private set; }
+    public int PeriodoLetivoId { get; private set; }
+    public PeriodoLetivo PeriodoLetivo { get; private set; }
 
-    public int PeriodoLetivoId { get; set; }
-    public PeriodoLetivo? PeriodoLetivo { get; set; }
+    public int Vagas { get; private set; }
+    public bool Fechada { get; private set; }
+    public FormulaMediaTipo FormulaMediaTipo { get; private set; } = FormulaMediaTipo.Ponderada;
+    public DateTime? DataFechamento { get; private set; }
 
-    public int Vagas { get; set; }
-    public bool Fechada { get; set; }
-
-    public FormulaMediaTipo FormulaMediaTipo { get; set; } = FormulaMediaTipo.Ponderada;
-    public DateTime? DataFechamento { get; set; }
-
-    public ICollection<Matricula> Matriculas { get; set; } = new List<Matricula>();
+    public ICollection<Matricula> Matriculas { get; private set; } = new List<Matricula>();
 
     public Turma() { }
     public Turma(int disciplinaId, int professorId, int periodoLetivoId, int vagas, FormulaMediaTipo formulaMediaTipo)
@@ -41,5 +39,13 @@ public class Turma
     {
         if (Fechada) throw new InvalidOperationException("O diário já está fechado.");
         Fechada = true;
+        DataFechamento = DateTime.UtcNow;
+    }
+  
+    public bool ValidarVagas()
+    {
+        var vagasDisponiveis = Matriculas.Count(m => m.Status == MatriculaStatus.Ativa) < Vagas;
+        if (!vagasDisponiveis) return false;
+        return true;
     }
 }
