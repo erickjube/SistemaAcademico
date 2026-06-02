@@ -1,4 +1,4 @@
-﻿namespace SistemaAcademico.DTOs;
+﻿namespace SistemaAcademico.DTOs.MatriculaDto;
 
 public class MatriculaCriarDto
 {

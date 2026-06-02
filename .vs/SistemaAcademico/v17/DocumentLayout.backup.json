@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|solutionrelative:sistemaacademico\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Migrations\\20260601174701_MigrationInicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SistemaAcademico\\Migrations\\20260601174701_MigrationInicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|c:\\users\\erick jube\\onedrive\\documents\\00faculdade\\semestre 5\\arquitetura_desenho_software\\trabalho\\sistemaacademico\\sistemaacademico\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|solutionrelative:sistemaacademico\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -22,24 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "20260601174701_MigrationInicial.cs",
-              "DocumentMoniker": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Migrations\\20260601174701_MigrationInicial.cs",
-              "RelativeDocumentMoniker": "SistemaAcademico\\Migrations\\20260601174701_MigrationInicial.cs",
-              "ToolTip": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Migrations\\20260601174701_MigrationInicial.cs",
-              "RelativeToolTip": "SistemaAcademico\\Migrations\\20260601174701_MigrationInicial.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-01T17:47:02.358Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Program.cs",
               "RelativeDocumentMoniker": "SistemaAcademico\\Program.cs",
@@ -58,7 +41,7 @@
               "RelativeDocumentMoniker": "SistemaAcademico\\appsettings.json",
               "ToolTip": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\appsettings.json",
               "RelativeToolTip": "SistemaAcademico\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-06-01T17:39:45.7Z",
               "EditorCaption": ""

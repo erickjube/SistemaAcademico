@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|c:\\users\\erick jube\\onedrive\\documents\\00faculdade\\semestre 5\\arquitetura_desenho_software\\trabalho\\sistemaacademico\\sistemaacademico\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|solutionrelative:sistemaacademico\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|c:\\users\\erick jube\\onedrive\\documents\\00faculdade\\semestre 5\\arquitetura_desenho_software\\trabalho\\sistemaacademico\\sistemaacademico\\services\\notaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|solutionrelative:sistemaacademico\\services\\notaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|c:\\users\\erick jube\\onedrive\\documents\\00faculdade\\semestre 5\\arquitetura_desenho_software\\trabalho\\sistemaacademico\\sistemaacademico\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|solutionrelative:sistemaacademico\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|c:\\users\\erick jube\\onedrive\\documents\\00faculdade\\semestre 5\\arquitetura_desenho_software\\trabalho\\sistemaacademico\\sistemaacademico\\services\\interfaces\\inotaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|solutionrelative:sistemaacademico\\services\\interfaces\\inotaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|c:\\users\\erick jube\\onedrive\\documents\\00faculdade\\semestre 5\\arquitetura_desenho_software\\trabalho\\sistemaacademico\\sistemaacademico\\repositories\\notarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|solutionrelative:sistemaacademico\\repositories\\notarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|c:\\users\\erick jube\\onedrive\\documents\\00faculdade\\semestre 5\\arquitetura_desenho_software\\trabalho\\sistemaacademico\\sistemaacademico\\repositories\\interfaces\\inotarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|solutionrelative:sistemaacademico\\repositories\\interfaces\\inotarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|c:\\users\\erick jube\\onedrive\\documents\\00faculdade\\semestre 5\\arquitetura_desenho_software\\trabalho\\sistemaacademico\\sistemaacademico\\dtos\\notadto\\criarnotadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|solutionrelative:sistemaacademico\\dtos\\notadto\\criarnotadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|c:\\users\\erick jube\\onedrive\\documents\\00faculdade\\semestre 5\\arquitetura_desenho_software\\trabalho\\sistemaacademico\\sistemaacademico\\models\\turma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|solutionrelative:sistemaacademico\\models\\turma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|c:\\users\\erick jube\\onedrive\\documents\\00faculdade\\semestre 5\\arquitetura_desenho_software\\trabalho\\sistemaacademico\\sistemaacademico\\models\\nota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|solutionrelative:sistemaacademico\\models\\nota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|c:\\users\\erick jube\\onedrive\\documents\\00faculdade\\semestre 5\\arquitetura_desenho_software\\trabalho\\sistemaacademico\\sistemaacademico\\enums\\situacaoaluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E069149-F40C-45BF-89E6-65A8A5A9C91C}|SistemaAcademico\\SistemaAcademico.csproj|solutionrelative:sistemaacademico\\enums\\situacaoaluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,28 +46,106 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Program.cs",
-              "RelativeDocumentMoniker": "SistemaAcademico\\Program.cs",
-              "ToolTip": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Program.cs",
-              "RelativeToolTip": "SistemaAcademico\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Turma.cs",
+              "DocumentMoniker": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Models\\Turma.cs",
+              "RelativeDocumentMoniker": "SistemaAcademico\\Models\\Turma.cs",
+              "ToolTip": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Models\\Turma.cs",
+              "RelativeToolTip": "SistemaAcademico\\Models\\Turma.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA7wCcAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-01T17:44:29.876Z",
+              "WhenOpened": "2026-06-02T00:35:12.319Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\appsettings.json",
-              "RelativeDocumentMoniker": "SistemaAcademico\\appsettings.json",
-              "ToolTip": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\appsettings.json",
-              "RelativeToolTip": "SistemaAcademico\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-06-01T17:39:45.7Z",
+              "Title": "NotaService.cs",
+              "DocumentMoniker": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Services\\NotaService.cs",
+              "RelativeDocumentMoniker": "SistemaAcademico\\Services\\NotaService.cs",
+              "ToolTip": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Services\\NotaService.cs",
+              "RelativeToolTip": "SistemaAcademico\\Services\\NotaService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T18:20:39.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CriarNotaDto.cs",
+              "DocumentMoniker": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\DTOs\\NotaDto\\CriarNotaDto.cs",
+              "RelativeDocumentMoniker": "SistemaAcademico\\DTOs\\NotaDto\\CriarNotaDto.cs",
+              "ToolTip": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\DTOs\\NotaDto\\CriarNotaDto.cs",
+              "RelativeToolTip": "SistemaAcademico\\DTOs\\NotaDto\\CriarNotaDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T19:16:00.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "INotaService.cs",
+              "DocumentMoniker": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Services\\Interfaces\\INotaService.cs",
+              "RelativeDocumentMoniker": "SistemaAcademico\\Services\\Interfaces\\INotaService.cs",
+              "ToolTip": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Services\\Interfaces\\INotaService.cs",
+              "RelativeToolTip": "SistemaAcademico\\Services\\Interfaces\\INotaService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T19:15:40.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SituacaoAluno.cs",
+              "DocumentMoniker": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\ENUMs\\SituacaoAluno.cs",
+              "RelativeDocumentMoniker": "SistemaAcademico\\ENUMs\\SituacaoAluno.cs",
+              "ToolTip": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\ENUMs\\SituacaoAluno.cs",
+              "RelativeToolTip": "SistemaAcademico\\ENUMs\\SituacaoAluno.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T19:06:40.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Nota.cs",
+              "DocumentMoniker": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Models\\Nota.cs",
+              "RelativeDocumentMoniker": "SistemaAcademico\\Models\\Nota.cs",
+              "ToolTip": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Models\\Nota.cs",
+              "RelativeToolTip": "SistemaAcademico\\Models\\Nota.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAiwEMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T18:33:46.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "INotaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Repositories\\Interfaces\\INotaRepository.cs",
+              "RelativeDocumentMoniker": "SistemaAcademico\\Repositories\\Interfaces\\INotaRepository.cs",
+              "ToolTip": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Repositories\\Interfaces\\INotaRepository.cs",
+              "RelativeToolTip": "SistemaAcademico\\Repositories\\Interfaces\\INotaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T18:31:14.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NotaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Repositories\\NotaRepository.cs",
+              "RelativeDocumentMoniker": "SistemaAcademico\\Repositories\\NotaRepository.cs",
+              "ToolTip": "C:\\Users\\Erick Jube\\OneDrive\\Documents\\00Faculdade\\Semestre 5\\Arquitetura_Desenho_Software\\trabalho\\SistemaAcademico\\SistemaAcademico\\Repositories\\NotaRepository.cs",
+              "RelativeToolTip": "SistemaAcademico\\Repositories\\NotaRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADoAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T18:25:06.03Z",
               "EditorCaption": ""
             }
           ]
