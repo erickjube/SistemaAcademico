@@ -6,8 +6,8 @@ public class SolicitacaoMatriculaEspecial
 {
     public int Id { get; private set; }
     public string Justificativa { get; private set; } = string.Empty;
-    public DateTime DataSolicitacao { get; private set; }
-    public SolicitacaoStatus Status { get; private set; }
+    public DateTime DataSolicitacao { get; private set; } = DateTime.UtcNow;
+    public SolicitacaoStatus Status { get; private set; } = SolicitacaoStatus.Pendente;
 
     public int AlunoId { get; private set; }
     public Usuario? Aluno { get; private set; }

@@ -105,7 +105,6 @@ C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenh
 C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\obj\Debug\net8.0\SistemaA.50D71193.Up2Date
 C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\obj\Debug\net8.0\SistemaAcademico.dll
 C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\obj\Debug\net8.0\refint\SistemaAcademico.dll

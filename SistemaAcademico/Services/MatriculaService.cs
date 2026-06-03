@@ -1,4 +1,5 @@
 ﻿using SistemaAcademico.DTOs.MatriculaDto;
+using SistemaAcademico.DTOs.MatriculaEspecialDto;
 using SistemaAcademico.ENUMs;
 using SistemaAcademico.Models;
 using SistemaAcademico.Repositories.Interfaces;
@@ -11,13 +12,17 @@ public class MatriculaService : IMatriculaService
     private readonly IMatriculaRepository _matriculaRepository;
     private readonly IUnitOfWork _unitOfWork;
     private readonly IFilaEsperaRepository _filaEsperaRepository;
+    private readonly ISolicitacaoMatriculaEspecialRepository _solicitacaoMatriculaEspecialRepository;
+
     public MatriculaService(IMatriculaRepository matriculaRepository, 
                             IUnitOfWork unitOfWork, 
-                            IFilaEsperaRepository filaEsperaRepository)
+                            IFilaEsperaRepository filaEsperaRepository,
+                            ISolicitacaoMatriculaEspecialRepository solicitacaoMatriculaEspecialRepository)
     {
         _matriculaRepository = matriculaRepository;
         _unitOfWork = unitOfWork;
         _filaEsperaRepository = filaEsperaRepository;
+        _solicitacaoMatriculaEspecialRepository = solicitacaoMatriculaEspecialRepository;
     }
 
     public async Task<IEnumerable<MatriculaResponseDto>> ObterMatriculasAsync()
@@ -108,5 +113,22 @@ public class MatriculaService : IMatriculaService
         await _matriculaRepository.AdicionarMatriculaAsync(matricula);
         await _unitOfWork.SalvarAsync();
 
+    }
+
+    public async Task CancelarMatriculaAsync(int matriculaId)
+    {
+        var matricula = await _matriculaRepository.ObterMatriculaAsync(matriculaId);
+        if (matricula == null) throw new Exception("Matrícula não encontrada para o ID especificado.");
+
+        var turma = await _matriculaRepository.ObterTurmaCompletaAsync(matricula.TurmaId);
+        var dataLimite = turma?.PeriodoLetivo?.InicioAulas.AddDays(-7);
+        if (dataLimite == null)
+            throw new InvalidOperationException("Não é possível determinar a data limite para cancelamento.");
+
+        if (DateTime.UtcNow > dataLimite)
+            throw new Exception("O prazo para cancelamento da matrícula expirou.");
+
+        matricula.Cancelar();
+        await _unitOfWork.SalvarAsync();
     }
 }

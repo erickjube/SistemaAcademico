@@ -1,4 +1,5 @@
 ﻿using SistemaAcademico.DTOs.MatriculaDto;
+using SistemaAcademico.DTOs.MatriculaEspecialDto;
 using SistemaAcademico.Models;
 
 namespace SistemaAcademico.Services.Interfaces;
@@ -10,9 +11,5 @@ public interface IMatriculaService
     Task<IEnumerable<MatriculaResponseDto?>> ObterMatriculaAsync(int alunoId);
     Task<MatriculaResponseDto> ObterMatriculaPorIdAsync(int matriculaId);
     Task CriarMatriculaAsync(MatriculaCriarDto dto);
-    Task CancelarMatriculaAsync(int id);
-
-    // Coordenador gerencia matrículas especiais
-    Task AprovarMatriculaEspecialAsync(int id);
-    Task RejeitarMatriculaEspecialAsync(int id);
+    Task CancelarMatriculaAsync(int matriculaId);
 }

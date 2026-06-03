@@ -31,14 +31,8 @@ public class Matricula
 
     public void Cancelar()
     {
-        if (Status == MatriculaStatus.Cancelada) throw new InvalidOperationException("A matrícula já está cancelada.");
+        if (Status == MatriculaStatus.Cancelada) throw new InvalidOperationException("A matrícula já está cancelada.");        
         Status = MatriculaStatus.Cancelada;
-    }
-
-    public void ColocarEmFilaEspera()
-    {
-        if (Status == MatriculaStatus.FilaEspera) throw new InvalidOperationException("A matrícula já está em fila de espera.");
-        Status = MatriculaStatus.FilaEspera;
     }
 
     public void TornarEspecial(string justificativa)
@@ -47,12 +41,5 @@ public class Matricula
         if (Status == MatriculaStatus.Especial) throw new InvalidOperationException("A matrícula já é especial.");
         Justificativa = justificativa;
         Status = MatriculaStatus.Especial;
-    }
-
-    public void Ativar()
-    {
-        if (Status == MatriculaStatus.Ativa) throw new InvalidOperationException("A matrícula já está ativa.");
-        if (Status == MatriculaStatus.Cancelada) throw new InvalidOperationException("Matrículas canceladas não podem ser reativadas.");
-        Status = MatriculaStatus.Ativa;
     }
 }
