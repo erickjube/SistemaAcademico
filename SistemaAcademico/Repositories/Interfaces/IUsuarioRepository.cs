@@ -6,8 +6,9 @@ public interface IUsuarioRepository
 {
     Task<Usuario?> ObterPorEmailAsync(string email);
     Task<Usuario?> ObterPorIdAsync(int id);
-    Task<List<Usuario>> ObterProfessoresAsync();
-    Task<List<Usuario>> ObterAlunosAsync();
+    Task<IEnumerable<Usuario>> ObterProfessoresAsync();
+    Task<IEnumerable<Usuario>> ObterAlunosAsync();
     Task AdicionarAsync(Usuario usuario);
     Task<bool> ExisteEmailAsync(string email);
+    Task<bool> ExisteCpfAsync(string cpf);
 }

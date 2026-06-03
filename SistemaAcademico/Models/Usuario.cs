@@ -33,4 +33,18 @@ public class Usuario
         SenhaHash = senhaHash;
         Perfil = perfil;
     }
+
+    public void AtualizarDados(string nome, string telefone)
+    {
+        if (string.IsNullOrWhiteSpace(nome)) throw new ArgumentException("Nome é obrigatório.", nameof(nome));
+        if (string.IsNullOrWhiteSpace(telefone)) throw new ArgumentException("Telefone é obrigatório.", nameof(telefone));
+        Nome = nome;
+        Telefone = telefone;
+    }
+
+    public void AlterarSenha(string novaSenhaHash)
+    {
+        if (string.IsNullOrWhiteSpace(novaSenhaHash)) throw new ArgumentException("SenhaHash é obrigatório.", nameof(novaSenhaHash));
+        SenhaHash = novaSenhaHash;
+    }
 }

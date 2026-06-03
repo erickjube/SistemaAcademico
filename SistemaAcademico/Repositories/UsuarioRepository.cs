@@ -24,16 +24,16 @@ public class UsuarioRepository : IUsuarioRepository
         return await _context.Usuarios.FindAsync(id);
     }
 
-    public async Task<List<Usuario>> ObterProfessoresAsync()
+    public async Task<IEnumerable<Usuario>> ObterProfessoresAsync()
     {
         return await _context.Usuarios
             .Where(u => u.Perfil == PerfilUsuario.Professor)
             .ToListAsync();
     }
 
-    public Task<List<Usuario>> ObterAlunosAsync()
+    public async Task<IEnumerable<Usuario>> ObterAlunosAsync()
     {
-        return _context.Usuarios
+        return await _context.Usuarios
             .Where(u => u.Perfil == PerfilUsuario.Aluno)
             .ToListAsync(); 
     }
@@ -46,5 +46,10 @@ public class UsuarioRepository : IUsuarioRepository
     public async Task<bool> ExisteEmailAsync(string email)
     {
         return await _context.Usuarios.AnyAsync(u => u.Email == email);
+    }
+
+    public async Task<bool> ExisteCpfAsync(string cpf)
+    {
+        return await _context.Usuarios.AnyAsync(u => u.Cpf == cpf);
     }
 }
