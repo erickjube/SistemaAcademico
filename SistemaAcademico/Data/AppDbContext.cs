@@ -17,6 +17,7 @@ public class AppDbContext : DbContext
     public DbSet<DocumentoGerado> DocumentosGerados => Set<DocumentoGerado>();
     public DbSet<Notificacao> Notificacoes => Set<Notificacao>();
     public DbSet<FilaEspera> FilaEsperas => Set<FilaEspera>();
+    public DbSet<SolicitacaoMatriculaEspecial> SolicitacoesMatriculaEspecial => Set<SolicitacaoMatriculaEspecial>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -70,7 +71,7 @@ public class AppDbContext : DbContext
                 .OnDelete(DeleteBehavior.Restrict);
         });
 
-         // turma
+        // turma
         modelBuilder.Entity<Turma>(entity =>
         {
             entity.HasKey(x => x.Id);
@@ -200,6 +201,25 @@ public class AppDbContext : DbContext
             entity.HasOne(f => f.Turma)
                 .WithMany()
                 .HasForeignKey(f => f.TurmaId)
+                .OnDelete(DeleteBehavior.Restrict);
+        });
+
+        // Solicitação matrícula especial
+        modelBuilder.Entity<SolicitacaoMatriculaEspecial>(entity =>
+        {
+            entity.HasKey(x => x.Id);
+            entity.Property(x => x.Justificativa)
+                .HasMaxLength(1000)
+                .IsRequired();
+            entity.Property(x => x.Status)
+                .HasConversion<string>();
+            entity.HasOne(s => s.Aluno)
+                .WithMany()
+                .HasForeignKey(s => s.AlunoId)
+                .OnDelete(DeleteBehavior.Restrict);
+            entity.HasOne(s => s.Turma)
+                .WithMany()
+                .HasForeignKey(s => s.TurmaId)
                 .OnDelete(DeleteBehavior.Restrict);
         });
     }

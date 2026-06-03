@@ -11,7 +11,8 @@ public interface IMatriculaService
     Task<MatriculaResponseDto> ObterMatriculaPorIdAsync(int matriculaId);
     Task CriarMatriculaAsync(MatriculaCriarDto dto);
     Task CancelarMatriculaAsync(int id);
-    Task ColocarEmFilaEsperaAsync(int id);
+
+    // Coordenador gerencia matrículas especiais
     Task AprovarMatriculaEspecialAsync(int id);
     Task RejeitarMatriculaEspecialAsync(int id);
 }
