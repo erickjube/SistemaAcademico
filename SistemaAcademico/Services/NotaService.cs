@@ -71,6 +71,8 @@ public class NotaService : INotaService
         var notaExistente = await _notaRepository.ObterNotaAsync(dto.MatriculaId);
         if (notaExistente is not null) throw new Exception("Já existe uma nota lançada para esta matrícula.");
 
+        if (!matricula.Aluno!.Ativo) throw new InvalidOperationException("Não é possível lançar notas para um aluno desativado.");
+
         var nota = new Nota
         (
             dto.MatriculaId,
@@ -97,6 +99,7 @@ public class NotaService : INotaService
         if (matricula is null) throw new Exception("Matrícula associada à nota não encontrada.");
         if (matricula.Turma is null) throw new Exception("Turma associada à matrícula não encontrada.");
         if (matricula.Turma.Fechada == true) throw new Exception("Não é possível alterar notas de uma turma fechada.");
+        if (!matricula.Aluno!.Ativo) throw new InvalidOperationException("Não é possível atualizar notas para um aluno desativado.");
 
         nota.AtualizarNota(dto.P1, dto.P2, dto.Trabalho, dto.Frequencia, media);
         await _unitOfWork.SalvarAsync();
@@ -113,7 +116,7 @@ public class NotaService : INotaService
 
         foreach (var matricula in turma.Matriculas)
         {
-            if (matricula.Nota is null) throw new Exception($"Aluno {matricula.Aluno?.Nome} está sem nota.");
+            if (matricula.Nota is null && matricula.Aluno!.Ativo) throw new Exception($"Aluno {matricula.Aluno?.Nome} está sem nota.");
         }
 
         turma.FecharDiario();

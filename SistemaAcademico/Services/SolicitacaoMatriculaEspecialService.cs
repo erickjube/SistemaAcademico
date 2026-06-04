@@ -1,4 +1,5 @@
 ﻿using SistemaAcademico.DTOs.MatriculaEspecialDto;
+using SistemaAcademico.ENUMs;
 using SistemaAcademico.Models;
 using SistemaAcademico.Repositories.Interfaces;
 using SistemaAcademico.Services.Interfaces;
@@ -10,14 +11,17 @@ public class SolicitacaoMatriculaEspecialService : ISolicitacaoMatriculaEspecial
     private readonly ISolicitacaoMatriculaEspecialRepository _solicitacaoMatriculaEspecialRepository;
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMatriculaRepository _matriculaRepository;
+    private readonly IUsuarioRepository _usuarioRepository;
 
     public SolicitacaoMatriculaEspecialService(ISolicitacaoMatriculaEspecialRepository solicitacaoMatriculaEspecialRepository, 
                                                IUnitOfWork unitOfWork,
-                                               IMatriculaRepository matriculaRepository)
+                                               IMatriculaRepository matriculaRepository,
+                                               IUsuarioRepository usuarioRepository)
     {
         _solicitacaoMatriculaEspecialRepository = solicitacaoMatriculaEspecialRepository;
         _unitOfWork = unitOfWork;
         _matriculaRepository = matriculaRepository;
+        _usuarioRepository = usuarioRepository;
     }
 
     public async Task<IEnumerable<SolicitacaoMatriculaEspecialResponseDto>> ObterSolicitacoesMatriculaEspecialAsync()
@@ -40,6 +44,10 @@ public class SolicitacaoMatriculaEspecialService : ISolicitacaoMatriculaEspecial
     public async Task SolicitarMatriculaEspecialAsync(SolicitacaoMatriculaEspecialCriarDto dto)
     {
         if (dto == null) throw new ArgumentNullException(nameof(dto), "O DTO de criação de matrícula especial não pode ser nulo.");
+        var aluno = await _usuarioRepository.ObterPorIdAsync(dto.AlunoId);
+        if (aluno == null) throw new Exception("Aluno não encontrado para o ID especificado.");
+        if (aluno.Perfil != PerfilUsuario.Aluno) throw new Exception("O ID especificado não corresponde a um aluno.");
+        if (!aluno.Ativo) throw new Exception("Não é possível solicitar matrícula especial para um aluno desativado.");
 
         var solicitacao = new SolicitacaoMatriculaEspecial(
             dto.AlunoId,

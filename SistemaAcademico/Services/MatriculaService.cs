@@ -74,6 +74,8 @@ public class MatriculaService : IMatriculaService
         var aluno = await _matriculaRepository.ObterAlunoAsync(dto.AlunoId);
         if (aluno == null) throw new Exception("Aluno não encontrado para o ID especificado.");
 
+        if (!aluno.Ativo) throw new InvalidOperationException("Usuário está desativado.");
+
         var turma = await _matriculaRepository.ObterTurmaCompletaAsync(dto.TurmaId);
         if (turma == null) throw new Exception("Turma não encontrada para o ID especificado.");
 

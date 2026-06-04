@@ -32,6 +32,7 @@ public class Usuario
         Cpf = cpf;
         SenhaHash = senhaHash;
         Perfil = perfil;
+        Ativo = true;
     }
 
     public void AtualizarDados(string nome, string telefone)
@@ -46,5 +47,11 @@ public class Usuario
     {
         if (string.IsNullOrWhiteSpace(novaSenhaHash)) throw new ArgumentException("SenhaHash é obrigatório.", nameof(novaSenhaHash));
         SenhaHash = novaSenhaHash;
+    }
+
+    public void Desativar()
+    {
+        if (!Ativo) throw new InvalidOperationException("Usuário já está desativado.");
+        Ativo = false;
     }
 }

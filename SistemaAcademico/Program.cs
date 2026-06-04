@@ -1,5 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using SistemaAcademico.Data;
+using SistemaAcademico.Patterns.Strategy;
+using SistemaAcademico.Repositories;
+using SistemaAcademico.Repositories.Interfaces;
+using SistemaAcademico.Services;
+using SistemaAcademico.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +15,30 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Configuração de injeção de dependência do repositório
+builder.Services.AddScoped<ICursoRepository, CursoRepository>();
+builder.Services.AddScoped<IDisciplinaRepository, DisciplinaRepository>();
+builder.Services.AddScoped<IFilaEsperaRepository, FilaEsperaRepository>();
+builder.Services.AddScoped<IMatriculaRepository, MatriculaRepository>();
+builder.Services.AddScoped<INotaRepository, NotaRepository>();
+builder.Services.AddScoped<ISolicitacaoMatriculaEspecialRepository, SolicitacaoMatriculaEspecialRepository>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+
+// Configuração de injeção de dependência da service
+builder.Services.AddScoped<ICursoService, CursoService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IDisciplinaService, DisciplinaService>();
+builder.Services.AddScoped<IDocumentoService, DocumentoService>();
+builder.Services.AddScoped<IMatriculaService, MatriculaService>();
+builder.Services.AddScoped<INotaService, NotaService>();
+builder.Services.AddScoped<INotificacaoService, NotificacaoService>();
+builder.Services.AddScoped<ISolicitacaoMatriculaEspecialService, SolicitacaoMatriculaEspecialService>();
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+
+// Configuração de injeção de dependência do factory
+builder.Services.AddScoped<CalculadoraFactory>();
 
 var app = builder.Build();
 

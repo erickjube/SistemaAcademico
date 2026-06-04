@@ -1,4 +1,6 @@
-﻿namespace SistemaAcademico.DTOs.UsuarioDto;
+﻿using System.Globalization;
+
+namespace SistemaAcademico.DTOs.UsuarioDto;
 
 public class UsuarioResponseDto
 {
@@ -8,4 +10,5 @@ public class UsuarioResponseDto
     public string Telefone { get; set; }
     public string Cpf { get; set; }
     public string Perfil { get; set; }
+    public string Ativo { get; set; }
 }

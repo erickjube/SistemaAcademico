@@ -19,7 +19,7 @@ public class UsuarioService : IUsuarioService
     public async Task<UsuarioResponseDto?> ObterPorEmailAsync(string email)
     {
         var usuario = await _usuarioRepository.ObterPorEmailAsync(email);
-        if (usuario == null) return null;
+        if (usuario == null) throw new Exception("Usuário não encontrado.");
         return new UsuarioResponseDto
         {
             Id = usuario.Id,
@@ -27,14 +27,15 @@ public class UsuarioService : IUsuarioService
             Email = usuario.Email,
             Telefone = usuario.Telefone,
             Cpf = usuario.Cpf,
-            Perfil = usuario.Perfil.ToString()
+            Perfil = usuario.Perfil.ToString(),
+            Ativo = usuario.Ativo ? "Sim" : "Não"
         };
     }
 
     public async Task<UsuarioResponseDto?> ObterPorIdAsync(int id)
     {
         var usuario = await _usuarioRepository.ObterPorIdAsync(id);
-        if (usuario == null) return null;
+        if (usuario == null) throw new Exception("Usuário não encontrado.");
         return new UsuarioResponseDto
         {
             Id = usuario.Id,
@@ -42,8 +43,24 @@ public class UsuarioService : IUsuarioService
             Email = usuario.Email,
             Telefone = usuario.Telefone,
             Cpf = usuario.Cpf,
-            Perfil = usuario.Perfil.ToString()
+            Perfil = usuario.Perfil.ToString(),
+            Ativo = usuario.Ativo ? "Sim" : "Não"
         };
+    }
+
+    public async Task<IEnumerable<UsuarioResponseDto?>> ObterTodos()
+    {
+        var usuarios = await _usuarioRepository.ObterTodosAsync();
+        return usuarios.Select(u => new UsuarioResponseDto
+        {
+            Id = u.Id,
+            Nome = u.Nome,
+            Email = u.Email,
+            Telefone = u.Telefone,
+            Cpf = u.Cpf,
+            Perfil = u.Perfil.ToString(),
+            Ativo = u.Ativo ? "Sim" : "Não"
+        });
     }
 
     public async Task<IEnumerable<UsuarioResponseDto>> ObterProfessoresAsync()
@@ -56,7 +73,8 @@ public class UsuarioService : IUsuarioService
             Email = p.Email,
             Telefone = p.Telefone,
             Cpf = p.Cpf,
-            Perfil = p.Perfil.ToString()
+            Perfil = p.Perfil.ToString(),
+            Ativo = p.Ativo ? "Sim" : "Não"
         });
     }
 
@@ -70,11 +88,12 @@ public class UsuarioService : IUsuarioService
             Email = a.Email,
             Telefone = a.Telefone,
             Cpf = a.Cpf,
-            Perfil = a.Perfil.ToString()
+            Perfil = a.Perfil.ToString(),
+            Ativo = a.Ativo ? "Sim" : "Não"
         });
     }
 
-    public async Task AdicionarAsync(CriarUsuarioDto dto)
+    public async Task<UsuarioResponseDto> AdicionarAsync(CriarUsuarioDto dto)
     {
         if (dto == null) throw new Exception("Dados do usuário são obrigatórios.");
 
@@ -88,6 +107,16 @@ public class UsuarioService : IUsuarioService
         var usuario = new Usuario(dto.Nome, dto.Email, dto.Telefone, dto.Cpf, senhaHash, dto.Perfil);
         await _usuarioRepository.AdicionarAsync(usuario);
         await _unitOfWork.SalvarAsync();
+        
+        return new UsuarioResponseDto
+        {
+            Id = usuario.Id,
+            Nome = usuario.Nome,
+            Email = usuario.Email,
+            Telefone = usuario.Telefone,
+            Cpf = usuario.Cpf,
+            Perfil = usuario.Perfil.ToString()
+        };
     }
 
     public async Task AtualizarAsync(AtualizarUsuarioDto dto)
@@ -95,7 +124,8 @@ public class UsuarioService : IUsuarioService
         if (dto == null) throw new Exception("Dados do usuário são obrigatórios.");
         var usuario = await _usuarioRepository.ObterPorIdAsync(dto.Id);
         if (usuario == null) throw new Exception("Usuário não encontrado.");
-
+        if (!usuario.Ativo) throw new InvalidOperationException("Usuário está desativado.");
+        
         usuario.AtualizarDados(dto.Nome, dto.Telefone);
 
         if (!string.IsNullOrWhiteSpace(dto.SenhaNova))
@@ -107,6 +137,14 @@ public class UsuarioService : IUsuarioService
             usuario.AlterarSenha(novoHash);
         }
 
+        await _unitOfWork.SalvarAsync();
+    }
+
+    public async Task  DesativarAsync(int id)
+    {
+        var usuario = await _usuarioRepository.ObterPorIdAsync(id);
+        if (usuario == null) throw new Exception("Usuário não encontrado.");
+        usuario.Desativar();
         await _unitOfWork.SalvarAsync();
     }
 }

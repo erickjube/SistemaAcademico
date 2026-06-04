@@ -24,4 +24,14 @@ public class Disciplina
         CargaHoraria = cargaHoraria;
         PreRequisitoId = preRequisitoId;
     }
+
+    public void Atualizar(string nome, int cargaHoraria, int? preRequisitoId = null)
+    {
+        if (string.IsNullOrWhiteSpace(nome)) throw new ArgumentException("Nome não pode ser vazio.", nameof(nome));
+        if (cargaHoraria <= 0) throw new ArgumentException("CargaHoraria deve ser um número positivo.", nameof(cargaHoraria));
+        if (preRequisitoId.HasValue && preRequisitoId <= 0) throw new ArgumentException("PreRequisitoId deve ser um número positivo.", nameof(preRequisitoId));
+        Nome = nome;
+        CargaHoraria = cargaHoraria;
+        PreRequisitoId = preRequisitoId;
+    }
 }

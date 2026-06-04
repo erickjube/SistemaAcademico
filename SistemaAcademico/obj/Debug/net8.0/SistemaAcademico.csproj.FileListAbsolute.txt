@@ -111,3 +111,14 @@ C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenh
 C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\obj\Debug\net8.0\SistemaAcademico.pdb
 C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\obj\Debug\net8.0\SistemaAcademico.genruntimeconfig.cache
 C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\obj\Debug\net8.0\ref\SistemaAcademico.dll
+C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\bin\Debug\net8.0\BCrypt-Net-Next.dll
+C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\bin\Debug\net8.0\BouncyCastle.Crypto.dll
+C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
