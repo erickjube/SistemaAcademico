@@ -43,7 +43,7 @@ public class DisciplinaService : IDisciplinaService
         };
     }
 
-    public async Task<DisciplinaDto> CriarDisciplinaAsync(DisciplinaDto dto)
+    public async Task<DisciplinaDto> CriarDisciplinaAsync(CriarDisciplinaDto dto)
     {
 
         var disciplina = new Disciplina(dto.Nome, dto.CursoId, dto.CargaHoraria, dto.PreRequisitoId);

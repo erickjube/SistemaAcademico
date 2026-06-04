@@ -39,7 +39,7 @@ public class CursoService : ICursoService
         };
     }
 
-    public async Task<CursoDto> CriarCursoAsync(CursoDto dto)
+    public async Task<CursoDto> CriarCursoAsync(CriarCursoDto dto)
     {
         var curso = new Curso(dto.Nome, dto.MaxDisciplinas);
         await _cursoRepository.AdicionarAsync(curso);

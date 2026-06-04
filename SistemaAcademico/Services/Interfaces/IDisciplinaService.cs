@@ -6,7 +6,7 @@ public interface IDisciplinaService
 {
     Task<IEnumerable<DisciplinaDto>> ObterTodasDisciplinasAsync();
     Task<DisciplinaDto> ObterDisciplinaPorIdAsync(int disciplinaId);
-    Task<DisciplinaDto> CriarDisciplinaAsync(DisciplinaDto dto);
+    Task<DisciplinaDto> CriarDisciplinaAsync(CriarDisciplinaDto dto);
     Task AtualizarDisciplinaAsync(DisciplinaDto dto);
     Task ExcluirDisciplinaAsync(int disciplinaId);
 }

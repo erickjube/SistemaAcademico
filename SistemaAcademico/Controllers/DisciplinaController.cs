@@ -31,7 +31,7 @@ public class DisciplinaController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<DisciplinaDto>> Create(DisciplinaDto dto)
+    public async Task<ActionResult<DisciplinaDto>> Create(CriarDisciplinaDto dto)
     {
         var disciplina = await _disciplinaService.CriarDisciplinaAsync(dto);
         return CreatedAtRoute("ObterDisciplina", new { DisciplinaId = disciplina.Id }, disciplina);

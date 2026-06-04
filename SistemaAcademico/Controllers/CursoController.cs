@@ -34,7 +34,7 @@ public class CursoController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<CursoDto>> Create(CursoDto dto)
+    public async Task<ActionResult<CursoDto>> Create(CriarCursoDto dto)
     {
         var curso = await _cursoService.CriarCursoAsync(dto);
         return CreatedAtRoute("ObterCurso", new { CursoId = curso.Id }, curso);
