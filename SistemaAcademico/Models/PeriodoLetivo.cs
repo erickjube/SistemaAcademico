@@ -1,4 +1,6 @@
-﻿namespace SistemaAcademico.Models;
+﻿using Org.BouncyCastle.Asn1;
+
+namespace SistemaAcademico.Models;
 
 public class PeriodoLetivo
 {
