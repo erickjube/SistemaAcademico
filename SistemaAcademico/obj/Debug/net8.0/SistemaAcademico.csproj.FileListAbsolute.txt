@@ -121,4 +121,3 @@ C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenh
 C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\bin\Debug\net8.0\BouncyCastle.Crypto.dll
 C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\Erick Jube\OneDrive\Documents\00Faculdade\Semestre 5\Arquitetura_Desenho_Software\trabalho\SistemaAcademico\SistemaAcademico\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

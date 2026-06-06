@@ -116,7 +116,10 @@ public class NotaService : INotaService
 
         foreach (var matricula in turma.Matriculas)
         {
-            if (matricula.Nota is null && matricula.Aluno!.Ativo) throw new Exception($"Aluno {matricula.Aluno?.Nome} está sem nota.");
+            if (matricula.Nota is null && matricula.Aluno!.Ativo) 
+                throw new Exception($"Aluno {matricula.Aluno?.Nome} está sem nota.");
+            if (matricula.Nota?.Frequencia == 0 && matricula.Aluno!.Ativo) 
+                throw new Exception($"Aluno {matricula.Aluno.Nome} está sem frequência.");
         }
 
         turma.FecharDiario();

@@ -11,6 +11,7 @@ public class Turma
 
     public int ProfessorId { get; private set; }
     public Usuario? Professor { get; private set; }
+
     public int PeriodoLetivoId { get; private set; }
     public PeriodoLetivo PeriodoLetivo { get; private set; }
 
@@ -33,6 +34,13 @@ public class Turma
         PeriodoLetivoId = periodoLetivoId;
         Vagas = vagas;
         FormulaMediaTipo = formulaMediaTipo;
+    }
+    
+    public void AtualizarVagas(int novasVagas)
+    {
+        if (novasVagas <= 0) throw new ArgumentException("Vagas deve ser um número positivo.", nameof(novasVagas));
+        if (Fechada) throw new InvalidOperationException("Não é possível atualizar as vagas de um diário fechado.");
+        Vagas = novasVagas;
     }
 
     public void FecharDiario()

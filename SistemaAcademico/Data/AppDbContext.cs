@@ -82,7 +82,7 @@ public class AppDbContext : DbContext
                 .OnDelete(DeleteBehavior.Restrict);
 
             entity.HasOne(t => t.Disciplina)
-                .WithMany()
+                .WithMany(d => d.Turmas)
                 .HasForeignKey(t => t.DisciplinaId)
                 .OnDelete(DeleteBehavior.Restrict);
 

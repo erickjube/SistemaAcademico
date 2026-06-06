@@ -16,10 +16,10 @@ public class DisciplinaService : IDisciplinaService
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<IEnumerable<DisciplinaDto>> ObterTodasDisciplinasAsync()
+    public async Task<IEnumerable<DisciplinaResponseDto>> ObterTodasDisciplinasAsync()
     {
         var disciplinas = await _disciplinaRepository.GetAllAsync();
-        return disciplinas.Select(d => new DisciplinaDto
+        return disciplinas.Select(d => new DisciplinaResponseDto
         {
             Id = d.Id,
             Nome = d.Nome,
@@ -29,11 +29,11 @@ public class DisciplinaService : IDisciplinaService
         });
     }
 
-    public async Task<DisciplinaDto> ObterDisciplinaPorIdAsync(int disciplinaId)
+    public async Task<DisciplinaResponseDto> ObterDisciplinaPorIdAsync(int disciplinaId)
     {
         var disciplina = await _disciplinaRepository.GetByIdAsync(disciplinaId);
         if (disciplina == null) throw new KeyNotFoundException("Disciplina não encontrada.");
-        return new DisciplinaDto
+        return new DisciplinaResponseDto
         {
             Id = disciplina.Id,
             Nome = disciplina.Nome,
@@ -43,13 +43,13 @@ public class DisciplinaService : IDisciplinaService
         };
     }
 
-    public async Task<DisciplinaDto> CriarDisciplinaAsync(CriarDisciplinaDto dto)
+    public async Task<DisciplinaResponseDto> CriarDisciplinaAsync(CriarDisciplinaDto dto)
     {
 
         var disciplina = new Disciplina(dto.Nome, dto.CursoId, dto.CargaHoraria, dto.PreRequisitoId);
         await _unitOfWork.SalvarAsync();
         await _disciplinaRepository.AddAsync(disciplina);
-        return new DisciplinaDto
+        return new DisciplinaResponseDto
         {
             Id = disciplina.Id,
             Nome = disciplina.Nome,
@@ -59,7 +59,7 @@ public class DisciplinaService : IDisciplinaService
         };
     }
 
-    public async Task AtualizarDisciplinaAsync(DisciplinaDto dto)
+    public async Task AtualizarDisciplinaAsync(UpdateDisciplinaDto dto)
     {
         var disciplina = await _disciplinaRepository.GetByIdAsync(dto.Id);
         if (disciplina == null) throw new Exception("Disciplina não encontrada.");

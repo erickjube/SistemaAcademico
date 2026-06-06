@@ -11,6 +11,7 @@ public class Disciplina
     public Disciplina? PreRequisito { get; private set; }
 
     public int CargaHoraria { get; private set; }
+    public ICollection<Turma> Turmas { get; private set; } = new List<Turma>();
 
     public Disciplina() { }
     public Disciplina(string nome, int cursoId, int cargaHoraria, int? preRequisitoId = null)

@@ -17,28 +17,28 @@ public class DisciplinaController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<DisciplinaDto>>> GetAll()
+    public async Task<ActionResult<IEnumerable<DisciplinaResponseDto>>> GetAll()
     {
         var disciplinas = await _disciplinaService.ObterTodasDisciplinasAsync();
         return Ok(disciplinas);
     }
 
     [HttpGet("{DisciplinaId}", Name = "ObterDisciplina")]
-    public async Task<ActionResult<DisciplinaDto>> GetById(int DisciplinaId)
+    public async Task<ActionResult<DisciplinaResponseDto>> GetById(int DisciplinaId)
     {
         var disciplina = await _disciplinaService.ObterDisciplinaPorIdAsync(DisciplinaId);
         return Ok(disciplina);
     }
 
     [HttpPost]
-    public async Task<ActionResult<DisciplinaDto>> Create(CriarDisciplinaDto dto)
+    public async Task<ActionResult<DisciplinaResponseDto>> Create(CriarDisciplinaDto dto)
     {
         var disciplina = await _disciplinaService.CriarDisciplinaAsync(dto);
         return CreatedAtRoute("ObterDisciplina", new { DisciplinaId = disciplina.Id }, disciplina);
     }
 
     [HttpPut]
-    public async Task<ActionResult> Update(DisciplinaDto dto)
+    public async Task<ActionResult> Update(UpdateDisciplinaDto dto)
     {
         await _disciplinaService.AtualizarDisciplinaAsync(dto);
         return NoContent();

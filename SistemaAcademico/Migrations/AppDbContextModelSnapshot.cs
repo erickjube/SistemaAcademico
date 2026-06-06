@@ -511,7 +511,7 @@ namespace SistemaAcademico.Migrations
             modelBuilder.Entity("SistemaAcademico.Models.Turma", b =>
                 {
                     b.HasOne("SistemaAcademico.Models.Disciplina", "Disciplina")
-                        .WithMany()
+                        .WithMany("Turmas")
                         .HasForeignKey("DisciplinaId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -538,6 +538,11 @@ namespace SistemaAcademico.Migrations
             modelBuilder.Entity("SistemaAcademico.Models.Curso", b =>
                 {
                     b.Navigation("Disciplinas");
+                });
+
+            modelBuilder.Entity("SistemaAcademico.Models.Disciplina", b =>
+                {
+                    b.Navigation("Turmas");
                 });
 
             modelBuilder.Entity("SistemaAcademico.Models.Matricula", b =>

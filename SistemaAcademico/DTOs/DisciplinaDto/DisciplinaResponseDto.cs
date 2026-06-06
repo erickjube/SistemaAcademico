@@ -1,6 +1,6 @@
 ﻿namespace SistemaAcademico.DTOs.DisciplinaDto;
 
-public class DisciplinaDto
+public class DisciplinaResponseDto
 {
     public int Id { get; set; }
     public string Nome { get; set; } = string.Empty;
