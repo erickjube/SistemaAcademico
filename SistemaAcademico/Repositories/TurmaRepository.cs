@@ -21,7 +21,10 @@ public class TurmaRepository : ITurmaRepository
 
     public async Task<Turma?> ObterPorIdAsync(int turmaId)
     {
-        return await _context.Turmas.FirstOrDefaultAsync(t => t.Id == turmaId);
+        return await _context.Turmas
+            .Include(t => t.Disciplina)
+            .Include(m => m.Matriculas)
+            .FirstOrDefaultAsync(t => t.Id == turmaId);
     }
 
     public async Task AdicionarAsync(Turma turma)

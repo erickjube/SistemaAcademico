@@ -4,6 +4,7 @@ namespace SistemaAcademico.DTOs.NotaDto;
 
 public class NotaResponseDto
 {
+    public int Id { get; set; }
     public int MatriculaId { get; set; }
     public string NomeAluno { get; set; } = string.Empty;
     public decimal P1 { get; set; }

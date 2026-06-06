@@ -1,6 +1,8 @@
-﻿using SistemaAcademico.DTOs.NotaDto;
+﻿using SistemaAcademico.DTOs.DiarioDto;
+using SistemaAcademico.DTOs.NotaDto;
 using SistemaAcademico.Models;
 using SistemaAcademico.Patterns.Strategy;
+using SistemaAcademico.Repositories;
 using SistemaAcademico.Repositories.Interfaces;
 using SistemaAcademico.Services.Interfaces;
 
@@ -26,6 +28,7 @@ public class NotaService : INotaService
 
         return notas.Select(n => new NotaResponseDto
         {
+            Id = n.Id,
             MatriculaId = n.MatriculaId,
             NomeAluno = n.Matricula!.Aluno!.Nome,
             P1 = n.P1,
@@ -44,6 +47,7 @@ public class NotaService : INotaService
 
         return new NotaResponseDto
         {
+            Id = nota.Id,
             MatriculaId = nota.MatriculaId,
             NomeAluno = nota.Matricula!.Aluno!.Nome,
             P1 = nota.P1,
@@ -124,5 +128,31 @@ public class NotaService : INotaService
 
         turma.FecharDiario();
         await _unitOfWork.SalvarAsync();
-    }    
+    }
+
+    public async Task<DiarioDto> BuscarDiarioAsync(int turmaId)
+    {
+        var turma = await _notaRepository.ObterDiarioAsync(turmaId);
+
+        if (turma == null) throw new Exception("Turma não encontrada.");
+
+        return new DiarioDto
+        {
+            TurmaId = turma.Id,
+            Disciplina = turma.Disciplina!.Nome,
+            Professor = turma.Professor!.Nome,
+            Fechada = turma.Fechada,
+            Alunos = turma.Matriculas.Select(m => new AlunoDiarioDto
+            {
+                MatriculaId = m.Id,
+                NomeAluno = m.Aluno!.Nome,
+                P1 = m.Nota?.P1,
+                P2 = m.Nota?.P2,
+                Trabalho = m.Nota?.Trabalho,
+                Frequencia = m.Nota?.Frequencia,
+                Media = m.Nota?.Media,
+                Situacao = (ENUMs.SituacaoAluno)(m.Nota?.Situacao)
+            }).ToList()
+        };
+    }
 }

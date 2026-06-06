@@ -11,4 +11,5 @@ public interface INotaRepository
     Task<Nota?> ObterNotaAsync(int matriculaId);
     Task AdicionarNotaAsync(Nota nota);
     void AtualizarNota(Nota nota);
+    Task<Turma?> ObterDiarioAsync(int turmaId);
 }

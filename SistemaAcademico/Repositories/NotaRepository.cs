@@ -65,4 +65,16 @@ public class NotaRepository : INotaRepository
     {
         _context.Notas.Update(nota);
     }
+
+    public async Task<Turma?> ObterDiarioAsync(int turmaId)
+    {
+        return await _context.Turmas
+            .Include(t => t.Disciplina)
+            .Include(t => t.Professor)
+            .Include(t => t.Matriculas)
+                .ThenInclude(m => m.Aluno)
+            .Include(t => t.Matriculas)
+                .ThenInclude(m => m.Nota)
+            .FirstOrDefaultAsync(t => t.Id == turmaId);
+    }
 }
