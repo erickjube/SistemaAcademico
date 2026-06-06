@@ -29,7 +29,7 @@ public class PeriodoLetivoRepository : IPeriodoLetivoRepository
         await _context.PeriodosLetivos.AddAsync(periodo);
     }
 
-    public async void Remover(PeriodoLetivo periodo)
+    public void Remover(PeriodoLetivo periodo)
     {
         _context.PeriodosLetivos.Remove(periodo);
     }

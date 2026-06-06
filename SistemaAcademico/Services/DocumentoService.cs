@@ -86,7 +86,7 @@ public class DocumentoService : IDocumentoService
             if (matricula.Nota != null)
             {
                 sb.AppendLine($"Média: {matricula.Nota.Media}");
-                sb.AppendLine($"Frequência: {matricula.Nota.Frequencia}%");
+                sb.AppendLine($"Frequência: {matricula.Nota.Frequencia}");
                 sb.AppendLine($"Situação: {matricula.Nota.Situacao}");
             }
 

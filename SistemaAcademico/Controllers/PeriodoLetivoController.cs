@@ -35,10 +35,10 @@ public class PeriodoLetivoController : ControllerBase
     public async Task<ActionResult<PeriodoDto>> Create(CriarPeriodoDto dto)
     {
         var periodo = await _periodoLetivoService.CriarPeriodoAsync(dto);
-        return CreatedAtRoute("ObterPeriodo", new { PeriodoLetivoId = periodo.Id }, periodo);
+        return CreatedAtRoute("ObterPeriodo", new { PeriodoId = periodo.Id }, periodo);
     }
 
-    [HttpDelete("{PeriodoId}")]
+    [HttpDelete("{periodoId}")]
     public async Task<ActionResult> Delete(int periodoId)
     {
         await _periodoLetivoService.ExcluirPeriodoAsync(periodoId);

@@ -15,5 +15,5 @@ public class AlunoDiarioDto
 
     public decimal? Media { get; set; }
 
-    public SituacaoAluno Situacao { get; set; }
+    public SituacaoAluno? Situacao { get; set; }
 }

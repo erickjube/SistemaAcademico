@@ -47,8 +47,8 @@ public class DisciplinaService : IDisciplinaService
     {
 
         var disciplina = new Disciplina(dto.Nome, dto.CursoId, dto.CargaHoraria, dto.PreRequisitoId);
-        await _unitOfWork.SalvarAsync();
         await _disciplinaRepository.AddAsync(disciplina);
+        await _unitOfWork.SalvarAsync();
         return new DisciplinaResponseDto
         {
             Id = disciplina.Id,

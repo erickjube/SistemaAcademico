@@ -42,7 +42,7 @@ public class MatriculaController : ControllerBase
         return Ok(matriculas);
     }
 
-    [HttpGet("disponiveis")]
+    [HttpGet("turmas-disponiveis")]
     public async Task<ActionResult> ObterTurmasDisponiveis(int alunoId)
     {
         var turmas = await _matriculaService.ObterTurmasDisponiveisAsync(alunoId);
@@ -80,7 +80,7 @@ public class MatriculaController : ControllerBase
         return Ok(solicitacoes);
     }
 
-    [HttpPut("especial/{id}/aprovar")]
+    [HttpPut("especial/{solicitacaoId}/aprovar")]
     public async Task<ActionResult> AprovarSolicitacao(int solicitacaoId)
     {
         await _especialService.AprovarMatriculaEspecialAsync(solicitacaoId);
@@ -90,7 +90,7 @@ public class MatriculaController : ControllerBase
         });
     }
 
-    [HttpPut("especial/{id}/rejeitar")]
+    [HttpPut("especial/{solicitacaoId}/rejeitar")]
     public async Task<ActionResult> RejeitarSolicitacao(int solicitacaoId)
     {
         await _especialService.RejeitarMatriculaEspecialAsync(solicitacaoId);

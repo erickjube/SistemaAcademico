@@ -176,7 +176,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "SistemaAcademico.DTOs.DiarioDto.DiarioDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "SistemaAcademico.Controllers.DisciplinaController",
@@ -332,6 +342,205 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SistemaAcademico.Controllers.MatriculaController",
+    "Method": "ObterMatriculas",
+    "RelativePath": "api/Matricula",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SistemaAcademico.DTOs.MatriculaDto.MatriculaResponseDto, SistemaAcademico, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.MatriculaController",
+    "Method": "CriarMatricula",
+    "RelativePath": "api/Matricula",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaAcademico.DTOs.MatriculaDto.MatriculaCriarDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SistemaAcademico.DTOs.MatriculaDto.MatriculaResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.MatriculaController",
+    "Method": "ObterMatricula",
+    "RelativePath": "api/Matricula/{matriculaId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "matriculaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SistemaAcademico.DTOs.MatriculaDto.MatriculaResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "ObterMatricula"
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.MatriculaController",
+    "Method": "CancelarMatricula",
+    "RelativePath": "api/Matricula/{matriculaId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "matriculaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.MatriculaController",
+    "Method": "ObterMatriculasAluno",
+    "RelativePath": "api/Matricula/aluno/{alunoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "alunoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SistemaAcademico.DTOs.MatriculaDto.MatriculaResponseDto, SistemaAcademico, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.MatriculaController",
+    "Method": "SolicitarMatriculaEspecial",
+    "RelativePath": "api/Matricula/especial",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaAcademico.DTOs.MatriculaEspecialDto.SolicitacaoMatriculaEspecialCriarDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.MatriculaController",
+    "Method": "ObterSolicitacoes",
+    "RelativePath": "api/Matricula/especial",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SistemaAcademico.DTOs.MatriculaDto.MatriculaResponseDto, SistemaAcademico, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.MatriculaController",
+    "Method": "AprovarSolicitacao",
+    "RelativePath": "api/Matricula/especial/{solicitacaoId}/aprovar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "solicitacaoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.MatriculaController",
+    "Method": "RejeitarSolicitacao",
+    "RelativePath": "api/Matricula/especial/{solicitacaoId}/rejeitar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "solicitacaoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.MatriculaController",
+    "Method": "ObterTurmasDisponiveis",
+    "RelativePath": "api/Matricula/turmas-disponiveis",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "alunoId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SistemaAcademico.Controllers.PeriodoLetivoController",
     "Method": "GetAll",
     "RelativePath": "api/PeriodoLetivo",
@@ -379,6 +588,22 @@
   },
   {
     "ContainingType": "SistemaAcademico.Controllers.PeriodoLetivoController",
+    "Method": "Delete",
+    "RelativePath": "api/PeriodoLetivo/{periodoId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "periodoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.PeriodoLetivoController",
     "Method": "GetById",
     "RelativePath": "api/PeriodoLetivo/{PeriodoId}",
     "HttpMethod": "GET",
@@ -403,22 +628,6 @@
       }
     ],
     "EndpointName": "ObterPeriodo"
-  },
-  {
-    "ContainingType": "SistemaAcademico.Controllers.PeriodoLetivoController",
-    "Method": "Delete",
-    "RelativePath": "api/PeriodoLetivo/{PeriodoId}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "periodoId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
   },
   {
     "ContainingType": "SistemaAcademico.Controllers.TurmaController",

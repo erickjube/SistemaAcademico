@@ -26,7 +26,13 @@ public class UsuarioRepository : IUsuarioRepository
 
     public async Task<Usuario?> ObterPorIdAsync(int id)
     {
-        return await _context.Usuarios.FindAsync(id);
+        return await _context.Usuarios
+        .Include(u => u.MatriculasAluno)
+            .ThenInclude(m => m.Turma)
+                .ThenInclude(t => t.Disciplina)
+        .Include(u => u.MatriculasAluno)
+            .ThenInclude(m => m.Nota)
+        .FirstOrDefaultAsync(u => u.Id == id);
     }
 
     public async Task<IEnumerable<Usuario>> ObterProfessoresAsync()

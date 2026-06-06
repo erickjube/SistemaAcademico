@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SistemaAcademico.DTOs.DiarioDto;
 using SistemaAcademico.DTOs.NotaDto;
 using SistemaAcademico.Services;
 using SistemaAcademico.Services.Interfaces;
@@ -17,7 +18,7 @@ public class DiarioController : ControllerBase
     }
 
     [HttpGet("turma/{turmaId}")]
-    public async Task<ActionResult> BuscarDiario(int turmaId)
+    public async Task<ActionResult<DiarioDto>> BuscarDiario(int turmaId)
     {
         var diario = await _notaService.BuscarDiarioAsync(turmaId);
         return Ok(diario);

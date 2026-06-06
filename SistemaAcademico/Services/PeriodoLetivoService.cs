@@ -65,7 +65,7 @@ public class PeriodoLetivoService : IPeriodoLetivoService
     public async Task ExcluirPeriodoAsync(int periodoId)
     {
         var periodo = await _periodoLetivoRepository.ObterPorIdAsync(periodoId);
-        if (periodo == null) throw new Exception("Curso não encontrado");
+        if (periodo == null) throw new Exception("Periodo não encontrado");
         _periodoLetivoRepository.Remover(periodo);
         await _unitOfWork.SalvarAsync();
     }

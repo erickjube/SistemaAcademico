@@ -5,8 +5,11 @@ using SistemaAcademico.Repositories;
 using SistemaAcademico.Repositories.Interfaces;
 using SistemaAcademico.Services;
 using SistemaAcademico.Services.Interfaces;
+using QuestPDF.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
+
+QuestPDF.Settings.License = LicenseType.Community;
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));

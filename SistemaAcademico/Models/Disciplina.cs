@@ -8,7 +8,7 @@ public class Disciplina
     public Curso? Curso { get; private set; }
 
     public int? PreRequisitoId { get; private set; }
-    public Disciplina? PreRequisito { get; private set; }
+    public Disciplina? PreRequisito { get; private set; } 
 
     public int CargaHoraria { get; private set; }
     public ICollection<Turma> Turmas { get; private set; } = new List<Turma>();
@@ -19,7 +19,7 @@ public class Disciplina
         if (string.IsNullOrWhiteSpace(nome)) throw new ArgumentException("Nome não pode ser vazio.", nameof(nome));
         if (cursoId <= 0) throw new ArgumentException("CursoId deve ser um número positivo.", nameof(cursoId));
         if (cargaHoraria <= 0) throw new ArgumentException("CargaHoraria deve ser um número positivo.", nameof(cargaHoraria));
-        if (preRequisitoId.HasValue && preRequisitoId <= 0) throw new ArgumentException("PreRequisitoId deve ser um número positivo.", nameof(preRequisitoId));
+        if (preRequisitoId < 0) throw new ArgumentException("PreRequisitoId não pode ser menor que zero.", nameof(preRequisitoId));
         Nome = nome;
         CursoId = cursoId;
         CargaHoraria = cargaHoraria;
@@ -30,7 +30,7 @@ public class Disciplina
     {
         if (string.IsNullOrWhiteSpace(nome)) throw new ArgumentException("Nome não pode ser vazio.", nameof(nome));
         if (cargaHoraria <= 0) throw new ArgumentException("CargaHoraria deve ser um número positivo.", nameof(cargaHoraria));
-        if (preRequisitoId.HasValue && preRequisitoId <= 0) throw new ArgumentException("PreRequisitoId deve ser um número positivo.", nameof(preRequisitoId));
+        if (preRequisitoId < 0) throw new ArgumentException("PreRequisitoId não pode ser menor que zero.", nameof(preRequisitoId));
         Nome = nome;
         CargaHoraria = cargaHoraria;
         PreRequisitoId = preRequisitoId;
