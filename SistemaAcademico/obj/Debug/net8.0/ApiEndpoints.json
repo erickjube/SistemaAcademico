@@ -29,7 +29,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "SistemaAcademico.DTOs.CursoDto.CursoDto",
+        "Type": "SistemaAcademico.DTOs.CursoDto.CriarCursoDto",
         "IsRequired": true
       }
     ],
@@ -115,6 +115,70 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SistemaAcademico.Controllers.DiarioController",
+    "Method": "FecharDiario",
+    "RelativePath": "api/Diario/{turmaId}/fechar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "turmaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.DiarioController",
+    "Method": "LancarNota",
+    "RelativePath": "api/Diario/notas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaAcademico.DTOs.NotaDto.CriarNotaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.DiarioController",
+    "Method": "AtualizarNota",
+    "RelativePath": "api/Diario/notas",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaAcademico.DTOs.NotaDto.CriarNotaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.DiarioController",
+    "Method": "BuscarDiario",
+    "RelativePath": "api/Diario/turma/{turmaId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "turmaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SistemaAcademico.Controllers.DisciplinaController",
     "Method": "GetAll",
     "RelativePath": "api/Disciplina",
@@ -124,7 +188,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[SistemaAcademico.DTOs.DisciplinaDto.DisciplinaDto, SistemaAcademico, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SistemaAcademico.DTOs.DisciplinaDto.DisciplinaResponseDto, SistemaAcademico, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -144,13 +208,13 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "SistemaAcademico.DTOs.DisciplinaDto.DisciplinaDto",
+        "Type": "SistemaAcademico.DTOs.DisciplinaDto.CriarDisciplinaDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "SistemaAcademico.DTOs.DisciplinaDto.DisciplinaDto",
+        "Type": "SistemaAcademico.DTOs.DisciplinaDto.DisciplinaResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -170,7 +234,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "SistemaAcademico.DTOs.DisciplinaDto.DisciplinaDto",
+        "Type": "SistemaAcademico.DTOs.DisciplinaDto.UpdateDisciplinaDto",
         "IsRequired": true
       }
     ],
@@ -192,7 +256,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "SistemaAcademico.DTOs.DisciplinaDto.DisciplinaDto",
+        "Type": "SistemaAcademico.DTOs.DisciplinaDto.DisciplinaResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -218,6 +282,232 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.DocumentoController",
+    "Method": "GerarDeclaracao",
+    "RelativePath": "api/Documento/declaracao",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.DocumentoController",
+    "Method": "GerarHistorico",
+    "RelativePath": "api/Documento/historico",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.DocumentoController",
+    "Method": "Validar",
+    "RelativePath": "api/Documento/validar/{hash}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "hash",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.PeriodoLetivoController",
+    "Method": "GetAll",
+    "RelativePath": "api/PeriodoLetivo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SistemaAcademico.DTOs.PeriodoLetivoDto.PeriodoDto, SistemaAcademico, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.PeriodoLetivoController",
+    "Method": "Create",
+    "RelativePath": "api/PeriodoLetivo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaAcademico.DTOs.PeriodoLetivoDto.CriarPeriodoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SistemaAcademico.DTOs.PeriodoLetivoDto.PeriodoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.PeriodoLetivoController",
+    "Method": "GetById",
+    "RelativePath": "api/PeriodoLetivo/{PeriodoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "periodoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SistemaAcademico.DTOs.PeriodoLetivoDto.PeriodoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "ObterPeriodo"
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.PeriodoLetivoController",
+    "Method": "Delete",
+    "RelativePath": "api/PeriodoLetivo/{PeriodoId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "periodoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.TurmaController",
+    "Method": "GetAll",
+    "RelativePath": "api/Turma",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SistemaAcademico.DTOs.TurmaDto.TurmaResponseDto, SistemaAcademico, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.TurmaController",
+    "Method": "Create",
+    "RelativePath": "api/Turma",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaAcademico.DTOs.TurmaDto.CriarTurmaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SistemaAcademico.DTOs.TurmaDto.TurmaResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.TurmaController",
+    "Method": "Update",
+    "RelativePath": "api/Turma",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaAcademico.DTOs.TurmaDto.UpdateTurmaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemaAcademico.Controllers.TurmaController",
+    "Method": "GetById",
+    "RelativePath": "api/Turma/{TurmaId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "turmaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SistemaAcademico.DTOs.TurmaDto.TurmaResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "ObterTurma"
   },
   {
     "ContainingType": "SistemaAcademico.Controllers.UsuarioController",

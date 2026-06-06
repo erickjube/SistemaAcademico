@@ -69,7 +69,50 @@ public class MatriculaService : IMatriculaService
         };
     }
 
-    public async Task CriarMatriculaAsync(MatriculaCriarDto dto)
+    public async Task<IEnumerable<TurmaDisponivelDto>> ObterTurmasDisponiveisAsync(int alunoId)
+    {
+        var aluno = await _matriculaRepository.ObterAlunoAsync(alunoId);
+        if (aluno == null) throw new Exception("Aluno não encontrado.");
+
+        var turmas = await _matriculaRepository.ObterTurmasDisponiveisAsync();
+
+        var resultado = new List<TurmaDisponivelDto>();
+
+        foreach (var turma in turmas)
+        {
+            try
+            {
+                turma.PeriodoLetivo?.ValidarPeriodoMatricula();
+            }
+            catch
+            {
+                continue;
+            }
+
+            var jaMatriculado = await _matriculaRepository.AlunoJaMatriculadoAsync(alunoId, turma.Id);
+            if (jaMatriculado) continue;
+
+            var possuiPreRequisito = true;
+
+            if (turma.Disciplina?.PreRequisito != null)
+                possuiPreRequisito = await _matriculaRepository.PossuiPreRequisitoAsync(alunoId, turma.Disciplina.PreRequisito.Id);
+
+            resultado.Add(new TurmaDisponivelDto
+            {
+                TurmaId = turma.Id,
+                Disciplina = turma.Disciplina?.Nome ?? "",
+                Professor = turma.Professor?.Nome ?? "",
+                Vagas = turma.Vagas,
+                VagasOcupadas = turma.Matriculas.Count(m => m.Status == MatriculaStatus.Ativa),
+                PossuiVagas = turma.ValidarVagas(),
+                PossuiPreRequisito = possuiPreRequisito,
+                MatriculaPermitida = possuiPreRequisito
+            });
+        }
+        return resultado;
+    }
+
+    public async Task<MatriculaResponseDto> CriarMatriculaAsync(MatriculaCriarDto dto)
     {
         var aluno = await _matriculaRepository.ObterAlunoAsync(dto.AlunoId);
         if (aluno == null) throw new Exception("Aluno não encontrado para o ID especificado.");
@@ -112,9 +155,18 @@ public class MatriculaService : IMatriculaService
             dto.AlunoId,
             dto.TurmaId);
 
+
+
         await _matriculaRepository.AdicionarMatriculaAsync(matricula);
         await _unitOfWork.SalvarAsync();
-
+        return new MatriculaResponseDto
+        {
+            Id = matricula.Id,
+            AlunoId = matricula.AlunoId,
+            TurmaId = matricula.TurmaId,
+            Status = matricula.Status.ToString(),
+            DataMatricula = matricula.DataMatricula
+        };
     }
 
     public async Task CancelarMatriculaAsync(int matriculaId)

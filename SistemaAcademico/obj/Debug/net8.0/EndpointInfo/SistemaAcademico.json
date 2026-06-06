@@ -50,17 +50,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CursoDto"
+                "$ref": "#/components/schemas/CriarCursoDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CursoDto"
+                "$ref": "#/components/schemas/CriarCursoDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CursoDto"
+                "$ref": "#/components/schemas/CriarCursoDto"
               }
             }
           }
@@ -197,6 +197,112 @@
         }
       }
     },
+    "/api/Diario/turma/{turmaId}": {
+      "get": {
+        "tags": [
+          "Diario"
+        ],
+        "parameters": [
+          {
+            "name": "turmaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Diario/notas": {
+      "post": {
+        "tags": [
+          "Diario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarNotaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarNotaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarNotaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Diario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarNotaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarNotaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarNotaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Diario/{turmaId}/fechar": {
+      "post": {
+        "tags": [
+          "Diario"
+        ],
+        "parameters": [
+          {
+            "name": "turmaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Disciplina": {
       "get": {
         "tags": [
@@ -210,7 +316,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DisciplinaDto"
+                    "$ref": "#/components/schemas/DisciplinaResponseDto"
                   }
                 }
               },
@@ -218,7 +324,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DisciplinaDto"
+                    "$ref": "#/components/schemas/DisciplinaResponseDto"
                   }
                 }
               },
@@ -226,7 +332,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DisciplinaDto"
+                    "$ref": "#/components/schemas/DisciplinaResponseDto"
                   }
                 }
               }
@@ -242,17 +348,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DisciplinaDto"
+                "$ref": "#/components/schemas/CriarDisciplinaDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/DisciplinaDto"
+                "$ref": "#/components/schemas/CriarDisciplinaDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/DisciplinaDto"
+                "$ref": "#/components/schemas/CriarDisciplinaDto"
               }
             }
           }
@@ -263,17 +369,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/DisciplinaDto"
+                  "$ref": "#/components/schemas/DisciplinaResponseDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DisciplinaDto"
+                  "$ref": "#/components/schemas/DisciplinaResponseDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DisciplinaDto"
+                  "$ref": "#/components/schemas/DisciplinaResponseDto"
                 }
               }
             }
@@ -288,17 +394,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DisciplinaDto"
+                "$ref": "#/components/schemas/UpdateDisciplinaDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/DisciplinaDto"
+                "$ref": "#/components/schemas/UpdateDisciplinaDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/DisciplinaDto"
+                "$ref": "#/components/schemas/UpdateDisciplinaDto"
               }
             }
           }
@@ -333,17 +439,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/DisciplinaDto"
+                  "$ref": "#/components/schemas/DisciplinaResponseDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DisciplinaDto"
+                  "$ref": "#/components/schemas/DisciplinaResponseDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DisciplinaDto"
+                  "$ref": "#/components/schemas/DisciplinaResponseDto"
                 }
               }
             }
@@ -368,6 +474,372 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Documento/historico": {
+      "get": {
+        "tags": [
+          "Documento"
+        ],
+        "parameters": [
+          {
+            "name": "usuarioId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Documento/declaracao": {
+      "get": {
+        "tags": [
+          "Documento"
+        ],
+        "parameters": [
+          {
+            "name": "usuarioId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Documento/validar/{hash}": {
+      "get": {
+        "tags": [
+          "Documento"
+        ],
+        "parameters": [
+          {
+            "name": "hash",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/PeriodoLetivo": {
+      "get": {
+        "tags": [
+          "PeriodoLetivo"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PeriodoDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PeriodoDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PeriodoDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PeriodoLetivo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarPeriodoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarPeriodoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarPeriodoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeriodoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeriodoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeriodoDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PeriodoLetivo/{PeriodoId}": {
+      "get": {
+        "tags": [
+          "PeriodoLetivo"
+        ],
+        "operationId": "ObterPeriodo",
+        "parameters": [
+          {
+            "name": "periodoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeriodoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeriodoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeriodoDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PeriodoLetivo"
+        ],
+        "parameters": [
+          {
+            "name": "periodoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Turma": {
+      "get": {
+        "tags": [
+          "Turma"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TurmaResponseDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TurmaResponseDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TurmaResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Turma"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarTurmaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarTurmaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriarTurmaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TurmaResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TurmaResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TurmaResponseDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Turma"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTurmaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTurmaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTurmaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Turma/{TurmaId}": {
+      "get": {
+        "tags": [
+          "Turma"
+        ],
+        "operationId": "ObterTurma",
+        "parameters": [
+          {
+            "name": "turmaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TurmaResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TurmaResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TurmaResponseDto"
+                }
+              }
+            }
           }
         }
       }
@@ -693,6 +1165,123 @@
         },
         "additionalProperties": false
       },
+      "CriarCursoDto": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "maxDisciplinas": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CriarDisciplinaDto": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "cursoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cargaHoraria": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "preRequisitoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CriarNotaDto": {
+        "type": "object",
+        "properties": {
+          "matriculaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "p1": {
+            "type": "number",
+            "format": "double"
+          },
+          "p2": {
+            "type": "number",
+            "format": "double"
+          },
+          "trabalho": {
+            "type": "number",
+            "format": "double"
+          },
+          "frequencia": {
+            "type": "number",
+            "format": "double"
+          },
+          "formula": {
+            "$ref": "#/components/schemas/FormulaMediaTipo"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CriarPeriodoDto": {
+        "type": "object",
+        "properties": {
+          "semestre": {
+            "type": "string",
+            "nullable": true
+          },
+          "inicioMatricula": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fimMatricula": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "inicioAulas": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fimAulas": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CriarTurmaDto": {
+        "type": "object",
+        "properties": {
+          "disciplinaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "professorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "periodoLetivoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vagas": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "formulaMediaTipo": {
+            "$ref": "#/components/schemas/FormulaMediaTipo"
+          }
+        },
+        "additionalProperties": false
+      },
       "CriarUsuarioDto": {
         "type": "object",
         "properties": {
@@ -740,7 +1329,7 @@
         },
         "additionalProperties": false
       },
-      "DisciplinaDto": {
+      "DisciplinaResponseDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -767,6 +1356,14 @@
         },
         "additionalProperties": false
       },
+      "FormulaMediaTipo": {
+        "enum": [
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "PerfilUsuario": {
         "enum": [
           1,
@@ -776,6 +1373,110 @@
         ],
         "type": "integer",
         "format": "int32"
+      },
+      "PeriodoDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "semestre": {
+            "type": "string",
+            "nullable": true
+          },
+          "inicioMatricula": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fimMatricula": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "inicioAulas": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fimAulas": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TurmaResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "disciplinaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "professorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "periodoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vagas": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechada": {
+            "type": "boolean"
+          },
+          "formulaMediaTipo": {
+            "$ref": "#/components/schemas/FormulaMediaTipo"
+          },
+          "dataFechamento": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateDisciplinaDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "cargaHoraria": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "preRequisitoId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateTurmaDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vagas": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
       },
       "UsuarioResponseDto": {
         "type": "object",

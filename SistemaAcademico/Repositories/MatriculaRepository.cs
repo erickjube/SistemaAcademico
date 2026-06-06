@@ -94,4 +94,14 @@ public class MatriculaRepository : IMatriculaRepository
     {
         return _context.Usuarios.FirstOrDefaultAsync(u => u.Id == alunoId && u.Perfil == PerfilUsuario.Aluno);
     }
+
+    public async Task<IEnumerable<Turma>> ObterTurmasDisponiveisAsync()
+    {
+        return await _context.Turmas
+            .Include(t => t.Disciplina)
+            .Include(t => t.Professor)
+            .Include(t => t.PeriodoLetivo)
+            .Include(t => t.Matriculas)
+            .ToListAsync();
+    }
 }

@@ -10,6 +10,7 @@ public interface IMatriculaService
     Task<IEnumerable<MatriculaResponseDto>> ObterMatriculasAsync();
     Task<IEnumerable<MatriculaResponseDto?>> ObterMatriculaAsync(int alunoId);
     Task<MatriculaResponseDto> ObterMatriculaPorIdAsync(int matriculaId);
-    Task CriarMatriculaAsync(MatriculaCriarDto dto);
+    Task<IEnumerable<TurmaDisponivelDto>> ObterTurmasDisponiveisAsync(int alunoId);
+    Task<MatriculaResponseDto> CriarMatriculaAsync(MatriculaCriarDto dto);
     Task CancelarMatriculaAsync(int matriculaId);
 }

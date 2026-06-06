@@ -18,23 +18,30 @@ builder.Services.AddSwaggerGen();
 
 // Configuração de injeção de dependência do repositório
 builder.Services.AddScoped<ICursoRepository, CursoRepository>();
+builder.Services.AddScoped<IDocumentoRepository, DocumentoRepository>();
 builder.Services.AddScoped<IDisciplinaRepository, DisciplinaRepository>();
 builder.Services.AddScoped<IFilaEsperaRepository, FilaEsperaRepository>();
 builder.Services.AddScoped<IMatriculaRepository, MatriculaRepository>();
 builder.Services.AddScoped<INotaRepository, NotaRepository>();
+builder.Services.AddScoped<IPeriodoLetivoRepository, PeriodoLetivoRepository>();
 builder.Services.AddScoped<ISolicitacaoMatriculaEspecialRepository, SolicitacaoMatriculaEspecialRepository>();
+builder.Services.AddScoped<ITurmaRepository, TurmaRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
 // Configuração de injeção de dependência da service
-builder.Services.AddScoped<ICursoService, CursoService>();
+builder.Services.AddScoped<IArquivoService, ArquivoService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICursoService, CursoService>();
 builder.Services.AddScoped<IDisciplinaService, DisciplinaService>();
 builder.Services.AddScoped<IDocumentoService, DocumentoService>();
 builder.Services.AddScoped<IMatriculaService, MatriculaService>();
 builder.Services.AddScoped<INotaService, NotaService>();
 builder.Services.AddScoped<INotificacaoService, NotificacaoService>();
+builder.Services.AddScoped<IPdfService, PdfService>();
+builder.Services.AddScoped<IPeriodoLetivoService, PeriodoLetivoService>();
 builder.Services.AddScoped<ISolicitacaoMatriculaEspecialService, SolicitacaoMatriculaEspecialService>();
+builder.Services.AddScoped<ITurmaService, TurmaService>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 
 // Configuração de injeção de dependência do factory

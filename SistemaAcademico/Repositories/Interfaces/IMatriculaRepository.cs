@@ -15,4 +15,5 @@ public interface IMatriculaRepository
     Task<int> ContarMatriculasAtivasAsync(int turmaId);
     Task AdicionarMatriculaAsync(Matricula matricula);
     Task AdicionarFilaEsperaAsync(FilaEspera fila);
+    Task<IEnumerable<Turma>> ObterTurmasDisponiveisAsync();
 }
