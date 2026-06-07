@@ -1,12 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SistemaAcademico.DTOs.TurmaDto;
-using SistemaAcademico.Models;
 using SistemaAcademico.Services.Interfaces;
 
 namespace SistemaAcademico.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class TurmaController : ControllerBase
 {
     private readonly ITurmaService _turmaService;
@@ -24,6 +25,7 @@ public class TurmaController : ControllerBase
     }
 
     [HttpGet("{TurmaId}", Name = "ObterTurma")]
+    [Authorize(Roles = "Professor,Coordenador,Secretaria")]
     public async Task<ActionResult<TurmaResponseDto>> GetById(int turmaId)
     {
         var turma = await _turmaService.ObterPorIdAsync(turmaId);
@@ -31,6 +33,7 @@ public class TurmaController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Secretaria,Coordenador")]
     public async Task<ActionResult<TurmaResponseDto>> Create(CriarTurmaDto dto)
     {
         var turma = await _turmaService.CriarAsync(dto);
@@ -38,6 +41,7 @@ public class TurmaController : ControllerBase
     }
 
     [HttpPut]
+    [Authorize(Roles = "Secretaria,Coordenador")]
     public async Task<ActionResult> Update(UpdateTurmaDto dto)
     {
         await _turmaService.Update(dto);

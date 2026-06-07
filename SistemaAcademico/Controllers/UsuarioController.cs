@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SistemaAcademico.DTOs.UsuarioDto;
 using SistemaAcademico.Services.Interfaces;
 
@@ -6,6 +7,7 @@ namespace SistemaAcademico.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize(Roles = "Secretaria")]
 public class UsuarioController : ControllerBase
 {
     private readonly IUsuarioService _usuarioService;

@@ -1,13 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SistemaAcademico.DTOs.DiarioDto;
 using SistemaAcademico.DTOs.NotaDto;
-using SistemaAcademico.Services;
 using SistemaAcademico.Services.Interfaces;
 
 namespace SistemaAcademico.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize(Roles = "Professor,Secretaria")]
 public class DiarioController : ControllerBase
 {
     private readonly INotaService _notaService;
@@ -37,7 +38,6 @@ public class DiarioController : ControllerBase
         await _notaService.AtualizarNotaAsync(dto);
         return Ok();
     }
-
 
     [HttpPost("{turmaId}/fechar")]
     public async Task<ActionResult> FecharDiario(int turmaId)

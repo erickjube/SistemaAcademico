@@ -1,13 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SistemaAcademico.DTOs.MatriculaDto;
 using SistemaAcademico.DTOs.MatriculaEspecialDto;
-using SistemaAcademico.Models;
 using SistemaAcademico.Services.Interfaces;
 
 namespace SistemaAcademico.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class MatriculaController : ControllerBase
 {
     private readonly IMatriculaService _matriculaService;
@@ -22,20 +23,23 @@ public class MatriculaController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize(Roles = "Secretaria,Coordenador")]
     public async Task<ActionResult<IEnumerable<MatriculaResponseDto>>> ObterMatriculas()
     {
         var matriculas = await _matriculaService.ObterMatriculasAsync();
         return Ok(matriculas);
     }
 
-    [HttpGet("{matriculaId}", Name = "ObterMatricula")] 
+    [HttpGet("{matriculaId}", Name = "ObterMatricula")]
+    [Authorize(Roles = "Secretaria,Coordenador")]
     public async Task<ActionResult<MatriculaResponseDto>> ObterMatricula(int matriculaId)
     {
         var matricula = await _matriculaService.ObterMatriculaPorIdAsync(matriculaId);
         return Ok(matricula);
     }
 
-    [HttpGet("aluno/{alunoId}")] 
+    [HttpGet("aluno/{alunoId}")]
+    [Authorize(Roles = "Secretaria,Coordenador,Aluno")]
     public async Task<ActionResult<IEnumerable<MatriculaResponseDto>>> ObterMatriculasAluno(int alunoId)
     {
         var matriculas = await _matriculaService.ObterMatriculaAsync(alunoId);
@@ -43,6 +47,7 @@ public class MatriculaController : ControllerBase
     }
 
     [HttpGet("turmas-disponiveis")]
+    [Authorize(Roles = "Secretaria,Aluno")]
     public async Task<ActionResult> ObterTurmasDisponiveis(int alunoId)
     {
         var turmas = await _matriculaService.ObterTurmasDisponiveisAsync(alunoId);
@@ -50,6 +55,7 @@ public class MatriculaController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Secretaria,Aluno")]
     public async Task<ActionResult<MatriculaResponseDto>> CriarMatricula(MatriculaCriarDto dto)
     {
         var matricula = await _matriculaService.CriarMatriculaAsync(dto);
@@ -57,6 +63,7 @@ public class MatriculaController : ControllerBase
     }
 
     [HttpDelete("{matriculaId}")]
+    [Authorize(Roles = "Aluno,Secretaria,Coordenador")]
     public async Task<ActionResult> CancelarMatricula(int matriculaId)
     {
         await _matriculaService.CancelarMatriculaAsync(matriculaId);
@@ -64,6 +71,7 @@ public class MatriculaController : ControllerBase
     }
 
     [HttpPost("especial")]
+    [Authorize(Roles = "Secretaria,Aluno")]
     public async Task<ActionResult> SolicitarMatriculaEspecial(SolicitacaoMatriculaEspecialCriarDto dto)
     {
         await _especialService.SolicitarMatriculaEspecialAsync(dto);
@@ -74,6 +82,7 @@ public class MatriculaController : ControllerBase
     }
 
     [HttpGet("especial")]
+    [Authorize(Roles = "Secretaria,Coordenador")]
     public async Task<ActionResult<IEnumerable<MatriculaResponseDto>>> ObterSolicitacoes()
     {
         var solicitacoes = await _especialService.ObterSolicitacoesMatriculaEspecialAsync();
@@ -81,6 +90,7 @@ public class MatriculaController : ControllerBase
     }
 
     [HttpPut("especial/{solicitacaoId}/aprovar")]
+    [Authorize(Roles = "Secretaria,Coordenador")]
     public async Task<ActionResult> AprovarSolicitacao(int solicitacaoId)
     {
         await _especialService.AprovarMatriculaEspecialAsync(solicitacaoId);
@@ -91,6 +101,7 @@ public class MatriculaController : ControllerBase
     }
 
     [HttpPut("especial/{solicitacaoId}/rejeitar")]
+    [Authorize(Roles = "Secretaria,Coordenador")]
     public async Task<ActionResult> RejeitarSolicitacao(int solicitacaoId)
     {
         await _especialService.RejeitarMatriculaEspecialAsync(solicitacaoId);
@@ -99,6 +110,4 @@ public class MatriculaController : ControllerBase
             Mensagem = "Solicitação rejeitada."
         });
     }
-
-
 }

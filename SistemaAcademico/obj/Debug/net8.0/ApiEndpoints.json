@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "SistemaAcademico.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SistemaAcademico.DTOs.AuthDto.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SistemaAcademico.Controllers.CursoController",
     "Method": "GetAll",
     "RelativePath": "api/Curso",

@@ -1,13 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using SistemaAcademico.DTOs.CursoDto;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SistemaAcademico.DTOs.PeriodoLetivoDto;
-using SistemaAcademico.Services;
 using SistemaAcademico.Services.Interfaces;
 
 namespace SistemaAcademico.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize(Roles = "Secretaria,Coordenador")]
 public class PeriodoLetivoController : ControllerBase
 {
     private readonly IPeriodoLetivoService _periodoLetivoService;

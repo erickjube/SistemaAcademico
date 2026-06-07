@@ -1,15 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using SistemaAcademico.Data;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SistemaAcademico.DTOs.CursoDto;
-using SistemaAcademico.Models;
-using SistemaAcademico.Repositories.Interfaces;
 using SistemaAcademico.Services.Interfaces;
 
 namespace SistemaAcademico.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize(Roles = "Secretaria,Coordenador")]
 public class CursoController : ControllerBase
 {
     private readonly ICursoService _cursoService;

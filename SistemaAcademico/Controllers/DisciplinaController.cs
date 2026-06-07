@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using SistemaAcademico.DTOs.CursoDto;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SistemaAcademico.DTOs.DisciplinaDto;
 using SistemaAcademico.Services.Interfaces;
 
@@ -7,6 +7,7 @@ namespace SistemaAcademico.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize(Roles = "Secretaria,Coordenador")]
 public class DisciplinaController : ControllerBase
 {
     private readonly IDisciplinaService _disciplinaService;
